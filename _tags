@@ -1,0 +1,5 @@
+"lib": include
+"problems": include
+"solutions": include
+true: package(hardcaml), package(ppx_deriving_hardcaml), package(hardcaml-waveterm)
+
