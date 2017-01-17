@@ -1,6 +1,6 @@
 # hardcaml-tutorial
 
-This is a collection of simple tutorial examples ported from the
+A collection of simple tutorial examples ported from the
 the [Chisel tutorial repo](https://github.com/ucb-bar/chisel-tutorial).
 
 They are structured into 2 parts.  A basic skeleton and 
@@ -11,13 +11,23 @@ The aim is to provide an implementation for the problem and test it
 against the provided solution.
 
 Running `make` will build an application, called `tutorial.native`, that 
-can be run against each tutorial example.  The testbench will instantiate
-the problem and solution implementations and run them together.
-Both designs are supplied with the same inputs and we expect the circuit
-outputs to match exactly.  Any mismatch will be printed.
+can be run against each tutorial example.  Run `-help` to get the command
+line option needed to enable each test.
+
+The testbench will instantiate the problem and solution implementations 
+and run them together.  Both designs are supplied with the same inputs 
+and we expect the circuit outputs to match exactly.  Any mismatch will 
+be printed.
 
 To aid debugging, pass the `-waves` options to display a waveform showing
-both circuits.
+both circuits.  Press `escape` to quit the waveform window.
+
+# Requirements
+
+```
+opam install hardcaml hardcaml-waveterm ppx_deriving_hardcaml
+git clone https://github.com/ujamjar/hardcaml-tutorial
+```
 
 # Examples
 

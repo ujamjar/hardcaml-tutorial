@@ -14,12 +14,12 @@ let tutorials =
     Solution_vendingmachine.vendingmachine_tutorial;
   ]
 
-let testbench = ref (fun () -> ())
+let testbench = ref (fun () -> Printf.printf "No test selected.\n")
 let sel_testbench = 
-  ("-waves", Arg.Set Checksim.show_waves, "Show waveform") ::
-  List.map (fun (n,f) -> "-"^n, Arg.Unit(fun () -> testbench := f), n) tutorials
+  ("-waves", Arg.Set Checksim.show_waves, " Show waveform") ::
+  List.map (fun (n,f) -> "-"^n, Arg.Unit(fun () -> testbench := f), " " ^ n ^ " example") tutorials
 
-let () = Arg.parse sel_testbench (fun _ -> ()) "hardcaml-tutorial"
+let () = Arg.(parse (align sel_testbench) (fun _ -> ()) "hardcaml-tutorial")
 
 let () = (!testbench) ()
 
